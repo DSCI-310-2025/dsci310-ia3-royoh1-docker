@@ -1,8 +1,3 @@
-# Publishes docker image, pinning actions to a commit SHA,
-# and updating most recently built image with the latest tag.
-# Can be triggered by either pushing a commit that changes the `Dockerfile`,
-# or manually dispatching the workflow.
-
 name: Publish Docker image
 
 on:
@@ -30,10 +25,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: yuimikuriya/dsci310-ia3-yui-ubc-docker
+          images: ${{ secrets.DOCKER_USERNAME }}/dockerfile-practice  
           tags: |
-            type=raw, value={{sha}},enable=${{github.ref_type != 'tag' }}
-            type=raw, value=latest
+            type=sha
+            type=raw,value=latest
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -41,5 +36,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/dockerfile-practice:latest  
           labels: ${{ steps.meta.outputs.labels }}
