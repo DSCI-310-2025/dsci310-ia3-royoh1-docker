@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKER_USERNAME }}/dockerfile-practice  
+          images: ${{ secrets.DOCKER_USERNAME }}/dsci310-ia3-royoh1-docker
           tags: |
             type=sha
             type=raw,value=latest
@@ -36,5 +36,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/dockerfile-practice:latest  
+          tags: ${{ secrets.DOCKER_USERNAME }}/dsci310-ia3-royoh1-docker:latest  
           labels: ${{ steps.meta.outputs.labels }}
