@@ -1,0 +1,64 @@
+{
+  "R": {
+    "Version": "4.4.2",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://packagemanager.posit.co/cran/latest"
+      }
+    ]
+  },
+  "Packages": {
+    "cowsay": {
+      "Package": "cowsay",
+      "Version": "0.8.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "crayon",
+        "fortunes",
+        "rmsfact"
+      ],
+      "Hash": "3c5fdcb12517c29280e6e66f77f77803"
+    },
+    "crayon": {
+      "Package": "crayon",
+      "Version": "1.5.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "grDevices",
+        "methods",
+        "utils"
+      ],
+      "Hash": "859d96e65ef198fd43e82b9628d593ef"
+    },
+    "fortunes": {
+      "Package": "fortunes",
+      "Version": "1.5-4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "utils"
+      ],
+      "Hash": "d031a520bc2c989180c772dbc6851088"
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "1.0.11",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "utils"
+      ],
+      "Hash": "47623f66b4e80b3b0587bc5d7b309888"
+    },
+    "rmsfact": {
+      "Package": "rmsfact",
+      "Version": "0.0.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "9e53733ec853fb8e5f2c74420c66e10b"
+    }
+  }
+}
