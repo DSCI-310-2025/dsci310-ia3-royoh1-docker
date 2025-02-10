@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'Dockerfile'
+      - .github/workflows/docker.yml
       - 'conda-linux-64.lock'
 
 jobs:
@@ -36,5 +37,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/dsci310-ia3-royoh1-docker:latest  
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
